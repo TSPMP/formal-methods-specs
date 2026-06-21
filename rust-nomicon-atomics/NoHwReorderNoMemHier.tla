@@ -1,4 +1,4 @@
----- MODULE SimpleConcurrent ----
+---- MODULE NoHwReorderNoMemHier ----
 
 EXTENDS Integers
 

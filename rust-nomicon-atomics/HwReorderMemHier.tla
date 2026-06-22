@@ -1,6 +1,6 @@
 ---- MODULE HwReorderMemHier ----
 
-(*
+(*******************************************************************************
 init x_ram = 0, y_ram = 1, x_t1 = 0, y_t1 = 0, x_t2 = 0, y_t2 = 0
 
 Thread 1
@@ -8,7 +8,8 @@ Thread 1
 
 Note, that we require StoreYT1 to follow SetYT1 and StoreXT1 follow SetXT1 but
 these two sets of instructions can execute independent of each other. This
-should be the "read your own writes" guarantee.
+should be the "read your own writes" guarantee that even weakly ordered hardware
+(at least ARM) gives you.
 
 SetYT1: y_t1 = 3
 StoreYT1: y_ram = y_t1
@@ -24,7 +25,7 @@ T2If: if x_t2 == 1 {
     SetYT2: y_t2 = y_t2 * 2
     StoreYT2: y_ram = y_t2
 }
-*)
+*******************************************************************************)
 
 EXTENDS Integers
 

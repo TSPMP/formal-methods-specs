@@ -1,12 +1,14 @@
 ---- MODULE HwReorderNoMemHier ----
 
-(*
+(*******************************************************************************
 This was my attempt at modeling hardware reordering with no memory hierarchy to
 see if I can find the execution that ends in the state x=1, y=2 as described in
-https://doc.rust-lang.org/nomicon/atomics.html.
+https://doc.rust-lang.org/nomicon/atomics.html#hardware-reordering
 
-It turns out that this is not enough :)
-*)
+It turns out that this is not enough :), i.e. you need the combination of a
+memory hierarchy together with different observable execution orderings on
+different cores to get the x=1, y=2 state.
+*******************************************************************************)
 
 EXTENDS Integers
 

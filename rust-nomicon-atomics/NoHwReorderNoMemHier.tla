@@ -1,5 +1,12 @@
 ---- MODULE NoHwReorderNoMemHier ----
 
+(*******************************************************************************
+This specification just models the
+[example](https://doc.rust-lang.org/nomicon/atomics.html#hardware-reordering) in
+Rust's nomicon's atomics chapter with no hardware reordering and no memory
+hierarchies.
+*******************************************************************************)
+
 EXTENDS Integers
 
 VARIABLES x, y, pc1, pc2
